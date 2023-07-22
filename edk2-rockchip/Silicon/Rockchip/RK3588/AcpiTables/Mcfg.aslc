@@ -35,38 +35,38 @@ EFI_ACPI_MEMORY_MAPPED_CONFIGURATION_SPACE_ACCESS_DESCRIPTION_TABLE Mcfg = {
   },
   {
     {
-      0x0000000900000000 + 0x8000,
+      0x0000000900000000,
       0,  // PciSegmentNumber
       1,  // PciBusMin
-      1,  // PciBusMax
+      252,  // PciBusMax
       0   // Reserved
     },
     {
       0x0000000940000000 + 0x8000,
       1,  // PciSegmentNumber
       1,  // PciBusMin
-      1,  // PciBusMax
+      252,  // PciBusMax
       0   // Reserved
     },
     {
-      0x0000000980000000 + 0x8000,
+      0x0000000980000000,
       2,  // PciSegmentNumber
       1,  // PciBusMin
-      1,  // PciBusMax
+      252,  // PciBusMax
       0   // Reserved
     },
     {
       0x00000009C0000000 + 0x8000,
       3,  // PciSegmentNumber
       1,  // PciBusMin
-      1,  // PciBusMax
+      252,  // PciBusMax
       0   // Reserved
     },
     {
       0x0000000A00000000 + 0x8000,
       4,  // PciSegmentNumber
       1,  // PciBusMin
-      1,  // PciBusMax
+      252,  // PciBusMax
       0   // Reserved
     }
   }

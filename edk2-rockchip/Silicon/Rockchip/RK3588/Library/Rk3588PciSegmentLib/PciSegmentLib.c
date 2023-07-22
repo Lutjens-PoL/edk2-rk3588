@@ -66,7 +66,7 @@ PciSegmentLibGetConfigBase (
   //   - bus 0 as there can only be the root port.
   //   - bus 1 because there may appear a ghost device at 0x1F.
   //
-  if (Device > 0 && (Bus == 0 || Bus == 1)) {
+  if (Device > 0 && (Bus == 0)) {
     return 0xffffffff;
   }
 
@@ -75,8 +75,13 @@ PciSegmentLibGetConfigBase (
     return PCIE_DBI_BASE (Segment);
   }
 
-  // Here starts the not-quite-compliant ECAM space.
-  return PCIE_CFG_BASE (Segment) + 0x8000;
+  // to-do: multi-function devices shouldn't have CFG0 accesses shifted by 0x8000
+  if (Bus == 1) {
+    return PCIE_CFG_BASE (Segment) + 0x8000;
+  }
+
+  // bus > 1 is fully ECAM compliant
+  return PCIE_CFG_BASE (Segment);
 }
 
 /**

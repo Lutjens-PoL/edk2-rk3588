@@ -33,9 +33,9 @@ DefinitionBlock (__FILE__, "SSDT", 5, "RKCP  ", "PCIE21L2", 2)
           WordBusNumber (ResourceProducer, MinFixed, MaxFixed, PosDecode,
             0,    // Granularity
             1,    // Range Minimum
-            1,    // Range Maximum
+            252,  // Range Maximum
             0,    // Translation Offset
-            1,    // Length
+            252,  // Length
           )
           DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,
             0x00000000,   // Granularity
